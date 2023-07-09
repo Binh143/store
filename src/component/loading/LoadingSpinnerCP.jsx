@@ -1,0 +1,23 @@
+import React from "react";
+import styled from "styled-components";
+
+const StyleLoading = styled.div`
+  width: ${(props) => props.size};
+  height: ${(props) => props.size};
+  border: ${(props) => props.borderSize} solid white;
+  border-bottom: ${(props) => props.borderSize} solid transparent;
+  border-top: ${(props) => props.borderSize} solid transparent;
+  border-radius: 100rem;
+  display: inline-block;
+  animation: spinner 1s infinite linear;
+  @keyframes spinner {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+const LoadingSpinner = ({ size = "40px", borderSize = "5px" }) => {
+  return <StyleLoading size={size} borderSize={borderSize}></StyleLoading>;
+};
+
+export default LoadingSpinner;
